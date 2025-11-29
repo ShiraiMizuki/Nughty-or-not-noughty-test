@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bandytabingeprojekt">
         <activity
+            android:name=".niezdane"
+            android:exported="false" />
+        <activity
+            android:name=".zdane"
+            android:exported="false" />
+        <activity
             android:name=".Quiz"
             android:exported="false" />
         <activity
