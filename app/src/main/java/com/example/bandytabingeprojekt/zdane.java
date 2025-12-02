@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
+import android.media.MediaPlayer;
 public class zdane extends AppCompatActivity {
 
     @Override
@@ -27,6 +27,9 @@ public class zdane extends AppCompatActivity {
                     Intent intent = getIntent();
                     int punkty = intent.getIntExtra("punkty", 0);
                     punktey.setText("punkty:"+punkty);
+                    MediaPlayer muzyk = MediaPlayer.create(this, R.raw.yipe);
+                    muzyk.start();
+
             powrot.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

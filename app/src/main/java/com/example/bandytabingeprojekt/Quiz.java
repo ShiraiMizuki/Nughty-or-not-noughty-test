@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import android.media.MediaPlayer;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -20,6 +20,7 @@ import java.util.List;
 public class Quiz extends AppCompatActivity {
     Random random = new Random();
     int aktualnepytanie;
+
     Button odp1, odp2, odp3, odp4;
     TextView pytanie , ktorepytanie;
     int punkty=1 , licznikpytan=1;
@@ -30,10 +31,10 @@ public class Quiz extends AppCompatActivity {
          aktualnepytanie = random.nextInt(20) + 1;
 
     }
-
+    private static MediaPlayer muzyk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        muzyk = MediaPlayer.create(this, R.raw.schlaggotsanta);
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_quiz);
@@ -157,6 +158,8 @@ public class Quiz extends AppCompatActivity {
             pytanie = findViewById(R.id.pytanie);
             ktorepytanie = findViewById(R.id.ktorepytanie);
             ktorepytanie.setText(licznikpytan+"/10");
+
+            muzyk.start();
             updatebuttons();
 // i know that i could do it more effectivly but im too lazy and it looks funny
             return insets;
@@ -215,6 +218,7 @@ public class Quiz extends AppCompatActivity {
        void sprawdzczyprawidlowa(){
         if(licznikpytan > 9 ){
             int finalpunkty =punkty;
+           muzyk.stop();
             if(punkty >6){
                 Intent intent = new Intent(Quiz.this , zdane.class);
                 intent.putExtra("punkty", punkty);

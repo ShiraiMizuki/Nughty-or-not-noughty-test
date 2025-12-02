@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-
+import android.media.MediaPlayer;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,7 +56,8 @@ public class niezdane extends AppCompatActivity {
                 cameraProvider.unbindAll();
                 cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageCapture);
                 captureImage();
-
+                MediaPlayer muzyk = MediaPlayer.create(this, R.raw.ambience);
+                muzyk.start();
 
 
 
