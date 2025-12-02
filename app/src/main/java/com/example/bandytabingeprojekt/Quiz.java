@@ -215,7 +215,7 @@ public class Quiz extends AppCompatActivity {
        void sprawdzczyprawidlowa(){
         if(licznikpytan > 9 ){
             int finalpunkty =punkty;
-            if(punkty >3){
+            if(punkty >6){
                 Intent intent = new Intent(Quiz.this , zdane.class);
                 intent.putExtra("punkty", punkty);
                 startActivity(intent);
@@ -228,7 +228,7 @@ public class Quiz extends AppCompatActivity {
                 punkty++;
                   updatebuttons();
                   licznikpytan++;
-                  ktorepytanie.setText(licznikpytan+"/10"+"e");
+                  ktorepytanie.setText(licznikpytan+"/10");
               }else {
                   updatebuttons();
                   licznikpytan++;
