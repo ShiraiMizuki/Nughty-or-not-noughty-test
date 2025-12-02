@@ -58,13 +58,13 @@ public class niezdane extends AppCompatActivity {
                 captureImage();
                 MediaPlayer muzyk = MediaPlayer.create(this, R.raw.ambience);
                 muzyk.start();
-
-
-
             } catch (ExecutionException | InterruptedException e) {
             }
         }, ContextCompat.getMainExecutor(this));
     }
+
+
+
 
     private void captureImage() {
         ContentValues contentValues = new ContentValues();
@@ -99,9 +99,5 @@ public class niezdane extends AppCompatActivity {
                       //bledy
                     }
                 }
-
-        );
-
-    }
-    }
-
+        );}
+}
